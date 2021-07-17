@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Nunito:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:wght@800&display=swap");
 @import url(../css/normalize.css);
 
 //vars
@@ -47,13 +47,30 @@ p {
   margin: 0;
 }
 
+.visually-hidden {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Montserrat', 'Tahoma', sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 1.3;
   background-color: #fff;
   color: $main-color;
+  background-image: url(../images/main-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -125,5 +142,102 @@ button {
   &:hover {
     background-color: $title-small-color;
   }
+}
 
+//header
+
+.header {
+  &__top {
+    display: flex;
+    align-items: center;
+    padding-top: 56px;
+  }
+
+  &__logo {
+    margin-right: 130px;
+
+    &:hover {
+      .header__icon path {
+        &:first-child {
+          fill: #5360FE;
+        }
+
+        &:last-child {
+          fill: #292930;
+        }
+      }
+    }
+  }
+
+  &__icon path {
+    transition: fill 0.3s;
+  }
+
+  &__btn {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-right: 30px;
+  }
+
+  &__lang {
+    width: 50px;
+    height: 50px;
+    background-color: $btn-color;
+    border-radius: 16px;
+    color: $main-violet-color;
+
+    &:hover {
+      font-weight: 500;
+    }
+  }
+}
+
+.menu {
+  margin-right: auto;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    transition: transform 0.2s;
+    width: 90px;
+
+    &:not(:last-child) {
+      margin-right: 45px;
+    }
+
+    &:hover {
+      transform: translateY(-7px);
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 1.2;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 10px;
+      background-color: $main-violet-color;
+      border-radius: 0px 0px 10px 10px;
+      top: -65px;
+      left: 0;
+      transition: width 0.3s ease-in-out;
+
+    }
+
+    &:hover {
+      font-weight: 700;
+      color: #292930;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+  }
 }
