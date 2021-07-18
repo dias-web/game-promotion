@@ -70,7 +70,7 @@ body {
   color: $main-color;
   background-image: url(../images/main-bg.png);
   background-repeat: no-repeat;
-  background-size: cover;
+
 }
 
 .container {
@@ -151,6 +151,9 @@ button {
     display: flex;
     align-items: center;
     padding-top: 56px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 5;
   }
 
   &__logo {
@@ -190,6 +193,72 @@ button {
       font-weight: 500;
     }
   }
+
+  &__content {
+    display: flex;
+    padding: 130px 0;
+    margin-bottom: 100px;
+  }
+
+  &__text {
+    max-width: 705px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__descr {
+    margin-bottom: 40px;
+    max-width: 665px;
+  }
+
+  &__price {
+    display: inline-block;
+    margin-right: 40px;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__promo {
+    padding-left: 43px;
+    font-size: 18px;
+    font-weight: 700;
+    color: $title;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 33px;
+      height: 33px;
+      border-radius: 50%;
+      background-color: $main-violet-color;
+      background-image: url(../images/play.svg);
+      background-repeat: no-repeat;
+      background-position: 45% 40%;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    width: 1033px;
+    height: 750px;
+    background-repeat: no-repeat;
+    background-position: center left;
+    right: 0;
+    top: 70px;
+  }
+
+
 }
 
 .menu {
@@ -238,6 +307,84 @@ button {
         width: 100%;
       }
     }
+  }
+}
 
+.promotion {
+  position: relative;
+
+  &__content {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__inner {
+    max-width: 728px;
+  }
+
+  &__title {
+    margin-bottom: 67px;
+  }
+
+  &__text {
+    max-width: 624px;
+    margin-bottom: 87px;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__list {
+    color: $title-small-color;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 130px;
+
+    &:not(:last-child) {
+      margin-bottom: 57px;
+    }
+
+    &:first-child {
+      max-width: 580px;
+    }
+
+    &:last-child {
+      max-width: 450px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 90px;
+      height: 90px;
+
+    }
+
+    &--icon1::before {
+      background-image: url(../images/promotin-icon1.svg);
+    }
+
+    &--icon2::before {
+      background-image: url(../images/promotin-icon2.svg);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    width: 913px;
+    height: 692px;
+    background-repeat: no-repeat;
+    background-position: left top;
+    left: 0;
+    top: 0;
   }
 }
