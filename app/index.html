@@ -310,6 +310,7 @@
     <section class="contact-form">
       <div class="container">
         <div class="contact-form__wrapper">
+          <div class="contact-form__bg"></div>
           <h2 class="title contact-form__title">
             Связаться с нами
           </h2>
@@ -321,18 +322,36 @@
             <input class="form__input" name="Телефон" type="tel" placeholder="Телефон">
             <input class="form__input" name="Почта" type="email" placeholder="E-mail">
             <input class="form__input" name="Ссылка" type="url" placeholder="URL-ссылка на приложение">
-            <select class="form__input form__select" name="Помощь" size="1">
-              <option>Чем мы можем помочь?</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-            <select class="form__input form__select" name="Помощь" size="1">
-              <option>Укажите рекламный бюджет</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
+
+            <div class="dropdown dropdown__help">
+              <button class="dropdown__button" type="button">
+                Чем мы можем помочь?
+              </button>
+              <ul class="dropdown__list">
+                <li class="dropdown__item">Нужен издатель</li>
+                <li class="dropdown__item">ASO продвижение PlayМаркет / AppStore</li>
+                <li class="dropdown__item">Аудит</li>
+                <li class="dropdown__item">Рекламный трафик</li>
+              </ul>
+              <input class="dropdown__hidden" type="text" name="select-category" value="">
+            </div>
+
+            <div class="dropdown dropdown__buget">
+              <button class="dropdown__button" type="button">
+                Укажите рекламный бюджет
+              </button>
+              <ul class="dropdown__list">
+                <li class="dropdown__item">Бюджета нет - нужен издатель</li>
+                <li class="dropdown__item">До 500 $</li>
+                <li class="dropdown__item">500 - 1 500 $</li>
+                <li class="dropdown__item">1 500 - 5 000 $</li>
+                <li class="dropdown__item">5 000 - 10 00 $</li>
+                <li class="dropdown__item">10 000 - 40 000 $</li>
+                <li class="dropdown__item">Более 40 000 $</li>
+              </ul>
+              <input class="dropdown__hidden" type="text" name="select-category" value="">
+            </div>
+
             <input class="form__checkbox" id="checkbox" type="checkbox" name="checkbox">
             <label class="form__label" for="checkbox">Я согласен(-на) на &nbsp;<a class="form__link" href="#"> обработку
                 персональных данных.</a>
